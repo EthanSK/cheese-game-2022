@@ -5,6 +5,8 @@ using UnityEngine;
 public class Dice : MonoBehaviour
 {
 
+    public bool IsDead { get; private set; } = false;
+
     private void OnEnable()
     {
         DiceManager.Instance.AddDice(this);
