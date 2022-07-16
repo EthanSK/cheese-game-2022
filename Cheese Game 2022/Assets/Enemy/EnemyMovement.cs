@@ -50,12 +50,8 @@ public class EnemyMovement : MonoBehaviour
     {
         var closestPoint = GetComponentInParent<Cheese>().GetComponent<Collider2D>().ClosestPoint(transform.position);
 
-        // var angleToFloor = ((Vector2)transform.localPosition).DegreesToOtherPoint(closestPoint);
 
         var gravityVec = _gravity * Time.deltaTime * ((Vector2)transform.position - closestPoint);
-        var debugpoint = GameObject.Find("DebugClosestPoint");
-        debugpoint.transform.position = closestPoint;
-        Debug.Log(gravityVec);
 
 
         _rigidbody.AddForce(gravityVec, ForceMode2D.Force);
