@@ -21,6 +21,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
     public bool IsPlayingLevel = false;
 
+    public float MobileHorizontalInput = 0f;
+
 
     private void OnEnable()
     {
@@ -73,5 +75,31 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     private void Update()
     {
         _timerText.text = TimeTakenSoFar.ToHumanReadableString();
+    }
+
+    public void HandleLeftSideOfScreenPress()
+    {
+        MobileHorizontalInput = -1f;
+    }
+
+    public void HandleRightSideOfScreenPress()
+    {
+        MobileHorizontalInput = 1f;
+    }
+
+    public void HandleLeftSideOfScreenUnPress()
+    {
+        if (!Mathf.Approximately(MobileHorizontalInput, 1f))
+        {
+            MobileHorizontalInput = 0f;
+        }
+    }
+
+    public void HandleRightSideOfScreenUnPress()
+    {
+        if (!Mathf.Approximately(MobileHorizontalInput, -1f))
+        {
+            MobileHorizontalInput = 0f;
+        }
     }
 }

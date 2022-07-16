@@ -16,7 +16,12 @@ public class Cheese : MonoBehaviour
 
     void Update()
     {
-        var rotAmt = Input.GetAxis("Horizontal") * _rotateSpeed * -1f * Time.deltaTime;
+        var horizInput = Input.GetAxis("Horizontal");
+        if (Mathf.Approximately(horizInput, 0f))
+        {
+            horizInput = LevelManager.Instance.MobileHorizontalInput;
+        }
+        var rotAmt = horizInput * _rotateSpeed * -1f * Time.deltaTime;
 
         transform.Rotate(new Vector3(0f, 0f, rotAmt));
 

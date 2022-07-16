@@ -83,6 +83,11 @@ public class Dice : MonoBehaviour
     {
 
         var horizInput = Input.GetAxis("Horizontal");
+
+        if (Mathf.Approximately(horizInput, 0f))
+        {
+            horizInput = LevelManager.Instance.MobileHorizontalInput;
+        }
         if (Input.GetKeyDown("left") || Input.GetKeyDown("right"))
         {
             _timeHorizInputLastStarted = Time.time;
