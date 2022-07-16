@@ -15,6 +15,7 @@ public class Dice : MonoBehaviour
     public bool IsDead { get; private set; } = false;
 
     private float _timeLastUpdatedDice = 0f;
+    private float _timeHorizInputLastStarted;
 
     private void Awake()
     {
@@ -36,11 +37,18 @@ public class Dice : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - _timeLastUpdatedDice > _timeBetweenUpdatingDiceFace)
-        {
-            var horizInput = Input.GetAxis("Horizontal");
 
-            if (Mathf.Approximately(horizInput, 1f))
+        var horizInput = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown("left") || Input.GetKeyDown("right"))
+        {
+            _timeHorizInputLastStarted = Time.time;
+        }
+
+        if ((Time.time - _timeLastUpdatedDice > _timeBetweenUpdatingDiceFace) &&
+        (Time.time - _timeHorizInputLastStarted > _timeBetweenUpdatingDiceFace))
+        {
+
+            if (horizInput > 0f)
             {
                 _curDiceFace = (_curDiceFace + 1) % 7;
                 if (_curDiceFace == 0) _curDiceFace = 1;
@@ -48,7 +56,7 @@ public class Dice : MonoBehaviour
                 _timeLastUpdatedDice = Time.time;
             }
 
-            if (Mathf.Approximately(horizInput, -1f))
+            if (horizInput < 0f)
             {
                 _curDiceFace = (_curDiceFace - 1) % 7;
                 if (_curDiceFace == 0) _curDiceFace = 6;

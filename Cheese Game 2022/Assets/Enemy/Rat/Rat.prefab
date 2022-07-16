@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab801ceec48c4500adfe881d4912fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4000
-  _maxSpeed: 2
-  _gravity: -15000
-  _jumpOutOfStuckForce: 2
+  _speed: 15
+  _maxSpeed: 1.3
+  _gravity: -80
+  _jumpOutOfStuckForce: 3
   _speedConsideredIdle: 1
   _whatIsJumpable:
     serializedVersion: 2

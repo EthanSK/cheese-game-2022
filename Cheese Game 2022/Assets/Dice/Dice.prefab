@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d07617fd124b24dca8ac3fd9c0cdc265, type: 3}
   - {fileID: 21300000, guid: 78fca5cbc236c42e39eb4fa88c4c761e, type: 3}
   - {fileID: 21300000, guid: 9a8c031e430604872bcdd0d5b3cd0ded, type: 3}
-  _timeBetweenUpdatingDiceFace: 0.3
+  _timeBetweenUpdatingDiceFace: 0.25
 --- !u!212 &7751073733296451119
 SpriteRenderer:
   m_ObjectHideFlags: 0

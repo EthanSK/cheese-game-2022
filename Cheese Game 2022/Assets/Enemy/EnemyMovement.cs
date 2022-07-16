@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
 
 
 
-        _rigidbody.AddRelativeForce(new Vector2(_speed * Time.fixedDeltaTime, 0f), ForceMode2D.Force);
+        _rigidbody.AddRelativeForce(new Vector2(_speed, 0f), ForceMode2D.Force);
 
         LocalGravity();
 
@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
     private void LocalGravity()
     {
         var closestPoint = GetComponentInParent<Cheese>().GetComponent<Collider2D>().ClosestPoint(transform.position);
-        var gravityVec = _gravity * Time.fixedDeltaTime * ((Vector2)transform.position - closestPoint);
+        var gravityVec = _gravity * ((Vector2)transform.position - closestPoint);
 
         _rigidbody.AddForce(gravityVec, ForceMode2D.Force);
     }
