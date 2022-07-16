@@ -17,8 +17,20 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         _audioSource = GetComponent<AudioSource>();
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += HandleSceneLoaded;
 
+
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
 
     }
 
@@ -27,10 +39,11 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
         SetMusic();
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == Constants.SceneNames.Menu || scene.name == Constants.SceneNames.Level)
         {
+            if (Instance == null || this == null) return;
             SetMusic();
 
         }
