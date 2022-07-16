@@ -50,7 +50,6 @@ public class Dice : MonoBehaviour
     {
         if (diceOnEnemy)
         {
-            Debug.Log("dice on trigger enter with onenemy");
 
             if (diceOnEnemy.CurDiceFace == _curDiceFace)
             {
@@ -60,7 +59,7 @@ public class Dice : MonoBehaviour
             }
             else
             {
-                //destroy this dice
+                Destroy(gameObject);
             }
         }
     }
