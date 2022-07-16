@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3955473299245460166}
   - component: {fileID: 7751073733296451119}
   - component: {fileID: 2175472482373364780}
-  - component: {fileID: 7725773832497501844}
+  - component: {fileID: 353162386}
   m_Layer: 7
   m_Name: Dice
   m_TagString: Untagged
@@ -48,12 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _diceFaces:
-  - {fileID: 21300000, guid: 589ba318fa2f8453fb92319b24d20d1f, type: 3}
-  - {fileID: 21300000, guid: bdb6d949c5b2942a6a9a307fb22e0b1d, type: 3}
-  - {fileID: 21300000, guid: 7bccc80a54a54404287b11eeb2c4ea47, type: 3}
-  - {fileID: 21300000, guid: 82e93b6d35a7a4e86b10cd6d3428e5bf, type: 3}
-  - {fileID: 21300000, guid: 15eb55858287541d18abfd29392e6153, type: 3}
-  - {fileID: 21300000, guid: 51f7478ba73bc410d87f88626cd46fb6, type: 3}
+  - {fileID: 21300000, guid: 1528edb9a150345259a0144f743b62cc, type: 3}
+  - {fileID: 21300000, guid: 7a6e719658a514180936004cb05d6187, type: 3}
+  - {fileID: 21300000, guid: 22f883a334b49422baf942dba56b82ae, type: 3}
+  - {fileID: 21300000, guid: d07617fd124b24dca8ac3fd9c0cdc265, type: 3}
+  - {fileID: 21300000, guid: 78fca5cbc236c42e39eb4fa88c4c761e, type: 3}
+  - {fileID: 21300000, guid: 9a8c031e430604872bcdd0d5b3cd0ded, type: 3}
 --- !u!212 &7751073733296451119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,12 +95,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51f7478ba73bc410d87f88626cd46fb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78fca5cbc236c42e39eb4fa88c4c761e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1.78, y: 1.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &7725773832497501844
+--- !u!61 &353162386
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,12 +144,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 1.1866666, y: 1.1466666}
+    newSize: {x: 1.78, y: 1.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1.1866666, y: 1.1466666}
   m_EdgeRadius: 0
