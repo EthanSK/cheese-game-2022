@@ -28,6 +28,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+
+
+
         _rigidbody.AddRelativeForce(new Vector2(_speed * Time.deltaTime, 0f), ForceMode2D.Force);
 
         LocalGravity();
@@ -38,11 +41,24 @@ public class EnemyMovement : MonoBehaviour
 
         JumpIfNeeded();
 
+
+
+
     }
 
     private void LocalGravity()
     {
-        _rigidbody.AddRelativeForce(new Vector2(0f, _gravity * Time.deltaTime), ForceMode2D.Force);
+        var closestPoint = GetComponentInParent<Cheese>().GetComponent<Collider2D>().ClosestPoint(transform.position);
+
+        // var angleToFloor = ((Vector2)transform.localPosition).DegreesToOtherPoint(closestPoint);
+
+        var gravityVec = _gravity * Time.deltaTime * ((Vector2)transform.position - closestPoint);
+        var debugpoint = GameObject.Find("DebugClosestPoint");
+        debugpoint.transform.position = closestPoint;
+        Debug.Log(gravityVec);
+
+
+        _rigidbody.AddForce(gravityVec, ForceMode2D.Force);
     }
 
     private void JumpIfNeeded()

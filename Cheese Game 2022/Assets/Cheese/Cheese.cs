@@ -22,7 +22,7 @@ public class Cheese : MonoBehaviour
 
         if (_iveGoneToTakeAPissMode)
         {
-            transform.Rotate(new Vector3(0f, 0f, _rotateSpeed * -1f * Time.deltaTime));
+            transform.Rotate(new Vector3(0f, 0f, rotAmt));
 
         }
     }
