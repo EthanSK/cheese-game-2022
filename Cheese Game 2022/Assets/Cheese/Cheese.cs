@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Cheese : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private float _rotateSpeed;
+    [SerializeField] private bool _iveGoneToTakeAPissMode;
+
+    private void Awake()
     {
-        
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        var rotAmt = Input.GetAxis("Horizontal") * _rotateSpeed * -1f * Time.deltaTime;
+
+        transform.Rotate(new Vector3(0f, 0f, rotAmt));
+
+        if (_iveGoneToTakeAPissMode)
+        {
+            transform.Rotate(new Vector3(0f, 0f, _rotateSpeed * -1f * Time.deltaTime));
+
+        }
     }
 }
