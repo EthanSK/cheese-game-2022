@@ -65,6 +65,11 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         }
     }
 
+    public void HandleResetClick()
+    {
+        RestartLevel();
+    }
+
     private void Update()
     {
         _timerText.text = TimeTakenSoFar.ToHumanReadableString();
