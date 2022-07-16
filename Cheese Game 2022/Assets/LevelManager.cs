@@ -10,7 +10,10 @@ using ETGgames.CheeseGame.Extensions;
 
 public class LevelManager : SingletonMonoBehaviour<LevelManager>
 {
+    public static Cheese CheesePrefab; // the level to be loaded
+
     [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private Transform _worldObj;
 
     public DateTimeOffset StartTimePlayLevel { get; private set; } = DateTimeOffset.MinValue;
     public DateTimeOffset EndTimePlayLevel { get; private set; } = DateTimeOffset.MaxValue;
@@ -27,6 +30,16 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     private void OnEnable()
     {
         DiceManager.Instance.OnDiceChange += HandleDiceChange;
+
+        if (CheesePrefab == null)
+        {
+            _worldObj.GetComponentInChildren<Cheese>().gameObject.SetActive(true);
+        }
+        else
+        {
+            Instantiate(CheesePrefab, _worldObj);
+
+        }
     }
 
     private void OnDisable()
@@ -39,6 +52,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
     private void Start()
     {
+
+
         StartPlayingLevel();
     }
 

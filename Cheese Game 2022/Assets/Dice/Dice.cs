@@ -43,8 +43,8 @@ public class Dice : MonoBehaviour
         {
             DiceManager.Instance.RemoveDice(this);
         }
-
-        Destroy(_diceTracker.gameObject);
+        if (_diceTracker != null)
+            Destroy(_diceTracker.gameObject);
     }
 
     public void OnOverlapDiceOnEnemy(DiceOnEnemy diceOnEnemy)

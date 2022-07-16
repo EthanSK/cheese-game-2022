@@ -8,5 +8,6 @@ public static class Constants
     {
         public const string Menu = "Menu";
         public const string LevelsMenu = "LevelsMenu";
+        public const string Level = "Level";
     }
 }
