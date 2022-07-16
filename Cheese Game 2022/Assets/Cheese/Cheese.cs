@@ -22,6 +22,8 @@ public class Cheese : MonoBehaviour
 
         if (_iveGoneToTakeAPissMode)
         {
+            rotAmt = _rotateSpeed * -1f * Time.deltaTime;
+
             transform.Rotate(new Vector3(0f, 0f, rotAmt));
 
         }

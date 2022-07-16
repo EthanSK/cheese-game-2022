@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
 
     private void SetDiceFace()
     {
-        _curDiceFace = (int)Mathf.Floor((transform.localRotation.eulerAngles.z % 360f) / (360f / (float)_diceFaces.Count)) + 1;
         _diceSpriteRenderer.sprite = _diceFaces[_curDiceFace - 1];
     }
 
