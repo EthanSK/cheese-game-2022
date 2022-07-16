@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerText: {fileID: 755338016}
-  _worldObj: {fileID: 0}
+  _worldObj: {fileID: 1827283464}
   IsPlayingLevel: 0
   MobileHorizontalInput: 0
 --- !u!4 &845879231
