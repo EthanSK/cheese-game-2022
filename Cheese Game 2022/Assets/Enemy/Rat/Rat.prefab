@@ -83,6 +83,7 @@ Transform:
   m_Children:
   - {fileID: 459507712}
   - {fileID: 4698696563407755876}
+  - {fileID: 1712657093270480303}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -506,6 +507,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d07617fd124b24dca8ac3fd9c0cdc265, type: 3}
   - {fileID: 21300000, guid: 78fca5cbc236c42e39eb4fa88c4c761e, type: 3}
   - {fileID: 21300000, guid: 9a8c031e430604872bcdd0d5b3cd0ded, type: 3}
+  _newDiceSpawnPos: {fileID: 1712657093270480303}
 --- !u!61 &8687745279698965937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -532,3 +534,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1866666, y: 1.1466666}
   m_EdgeRadius: 0
+--- !u!1 &7125202437344218157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712657093270480303}
+  m_Layer: 6
+  m_Name: NewDiceSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1712657093270480303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125202437344218157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.136, y: 0.313, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 982554345617160334}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

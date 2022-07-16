@@ -5,10 +5,11 @@ using UnityEngine;
 public class DiceOnEnemy : MonoBehaviour
 {
 
-
+    public Transform NewDiceSpawnPos => _newDiceSpawnPos;//use global position of this transform for pos
     public int CurDiceFace => _curDiceFace;
     private SpriteRenderer _diceSpriteRenderer;
     [SerializeField] private List<Sprite> _diceFaces;
+    [SerializeField] private Transform _newDiceSpawnPos;
 
 
     private int _curDiceFace = 1;

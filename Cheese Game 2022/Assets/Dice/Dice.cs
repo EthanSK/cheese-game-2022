@@ -22,11 +22,12 @@ public class Dice : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _curDiceFace = Random.Range(1, 7);
+
     }
 
     private void Start()
     {
-        _curDiceFace = Random.Range(1, 7);
     }
 
     private void OnEnable()
@@ -54,7 +55,9 @@ public class Dice : MonoBehaviour
             if (diceOnEnemy.CurDiceFace == _curDiceFace)
             {
                 //spawn another dice
-                Instantiate(this, transform.parent);
+                var newDice = Instantiate(this, diceOnEnemy.NewDiceSpawnPos.position, diceOnEnemy.NewDiceSpawnPos.rotation, transform.parent);
+                newDice._curDiceFace = _curDiceFace;
+                IncrementDiceFace();
                 Destroy(diceOnEnemy.gameObject);
             }
             else
@@ -62,6 +65,18 @@ public class Dice : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void IncrementDiceFace()
+    {
+        _curDiceFace = (_curDiceFace + 1) % 7;
+        if (_curDiceFace == 0) _curDiceFace = 1;
+    }
+
+    private void DecrementDiceFace()
+    {
+        _curDiceFace = (_curDiceFace - 1) % 7;
+        if (_curDiceFace == 0) _curDiceFace = 6;
     }
 
     private void Update()
@@ -79,16 +94,14 @@ public class Dice : MonoBehaviour
 
             if (horizInput > 0f)
             {
-                _curDiceFace = (_curDiceFace + 1) % 7;
-                if (_curDiceFace == 0) _curDiceFace = 1;
+                IncrementDiceFace();
 
                 _timeLastUpdatedDice = Time.time;
             }
 
             if (horizInput < 0f)
             {
-                _curDiceFace = (_curDiceFace - 1) % 7;
-                if (_curDiceFace == 0) _curDiceFace = 6;
+                DecrementDiceFace();
 
                 _timeLastUpdatedDice = Time.time;
             }
