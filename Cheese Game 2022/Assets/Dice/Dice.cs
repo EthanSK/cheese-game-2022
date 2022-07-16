@@ -24,6 +24,10 @@ public class Dice : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        _curDiceFace = Random.Range(1, 7);
+    }
 
     private void OnEnable()
     {
@@ -52,6 +56,7 @@ public class Dice : MonoBehaviour
             {
                 //spawn another dice
                 Instantiate(this, transform.parent);
+                Destroy(diceOnEnemy.gameObject);
             }
             else
             {
