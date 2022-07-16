@@ -1425,10 +1425,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 8384820169155532989}
     m_Modifications:
-    - target: {fileID: 2175472482373364780, guid: 2cedbf38c99514355ae792d8aef11e86, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3314164548122622808, guid: 2cedbf38c99514355ae792d8aef11e86, type: 3}
       propertyPath: m_Name
       value: Dice

@@ -84,7 +84,7 @@ Transform:
   - {fileID: 459507712}
   - {fileID: 4698696563407755876}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9044093104269834133
 MonoBehaviour:
@@ -98,14 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01ba357bd0ba40ada837fe8cca095b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _diceFaces:
-  - {fileID: 21300000, guid: 1528edb9a150345259a0144f743b62cc, type: 3}
-  - {fileID: 21300000, guid: 7a6e719658a514180936004cb05d6187, type: 3}
-  - {fileID: 21300000, guid: 22f883a334b49422baf942dba56b82ae, type: 3}
-  - {fileID: 21300000, guid: d07617fd124b24dca8ac3fd9c0cdc265, type: 3}
-  - {fileID: 21300000, guid: 78fca5cbc236c42e39eb4fa88c4c761e, type: 3}
-  - {fileID: 21300000, guid: 9a8c031e430604872bcdd0d5b3cd0ded, type: 3}
-  _diceSpriteRenderer: {fileID: 2603743149235867997}
 --- !u!114 &9041640131227561109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +411,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4698696563407755876}
   - component: {fileID: 2603743149235867997}
+  - component: {fileID: 919123341645692031}
+  - component: {fileID: 8687745279698965937}
   m_Layer: 6
   m_Name: Dice
   m_TagString: Untagged
@@ -493,3 +487,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &919123341645692031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046856542484730669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc1e619f5ca144888e5c6f4f27ebb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _diceFaces:
+  - {fileID: 21300000, guid: 1528edb9a150345259a0144f743b62cc, type: 3}
+  - {fileID: 21300000, guid: 7a6e719658a514180936004cb05d6187, type: 3}
+  - {fileID: 21300000, guid: 22f883a334b49422baf942dba56b82ae, type: 3}
+  - {fileID: 21300000, guid: d07617fd124b24dca8ac3fd9c0cdc265, type: 3}
+  - {fileID: 21300000, guid: 78fca5cbc236c42e39eb4fa88c4c761e, type: 3}
+  - {fileID: 21300000, guid: 9a8c031e430604872bcdd0d5b3cd0ded, type: 3}
+--- !u!61 &8687745279698965937
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046856542484730669}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.1866666, y: 1.1466666}
+    newSize: {x: 1.1866666, y: 1.1466666}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1866666, y: 1.1466666}
+  m_EdgeRadius: 0

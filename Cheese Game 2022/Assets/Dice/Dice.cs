@@ -7,6 +7,7 @@ public class Dice : MonoBehaviour
 
     [SerializeField] private List<Sprite> _diceFaces;
     [SerializeField] private float _timeBetweenUpdatingDiceFace;
+    [SerializeField] private DiceTracker _diceTrackerPrefab;
 
     private SpriteRenderer _spriteRenderer;
 
@@ -16,15 +17,19 @@ public class Dice : MonoBehaviour
 
     private float _timeLastUpdatedDice = 0f;
     private float _timeHorizInputLastStarted;
+    private DiceTracker _diceTracker;
 
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+
     private void OnEnable()
     {
         DiceManager.Instance.AddDice(this);
+        _diceTracker = DiceTracker.Create(_diceTrackerPrefab, this, transform.parent.parent);
+
 
     }
     private void OnDisable()
@@ -32,6 +37,26 @@ public class Dice : MonoBehaviour
         if (DiceManager.Exists) //might not exist when leaving the scene eg going to main menu from level builder
         {
             DiceManager.Instance.RemoveDice(this);
+        }
+
+        Destroy(_diceTracker.gameObject);
+    }
+
+    public void OnOverlapDiceOnEnemy(DiceOnEnemy diceOnEnemy)
+    {
+        if (diceOnEnemy)
+        {
+            Debug.Log("dice on trigger enter with onenemy");
+
+            if (diceOnEnemy.CurDiceFace == _curDiceFace)
+            {
+                //spawn another dice
+                Instantiate(this, transform.parent);
+            }
+            else
+            {
+                //destroy this dice
+            }
         }
     }
 
