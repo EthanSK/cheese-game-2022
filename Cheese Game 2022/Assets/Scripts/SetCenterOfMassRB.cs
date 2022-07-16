@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ETGgames.YOMG2.Extensions;
+using ETGgames.CheeseGame.Extensions;
 using ETGgames.Extensions;
 
 public class SetCenterOfMassRB : MonoBehaviour

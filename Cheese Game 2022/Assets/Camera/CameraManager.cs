@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using ETGgames.Utils;
-using ETGgames.YOMG2.Extensions;
 
 public class CameraManager : SingletonMonoBehaviour<CameraManager>
 {

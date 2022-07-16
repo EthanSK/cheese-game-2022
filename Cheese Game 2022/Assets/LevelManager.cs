@@ -1,13 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ETGgames.Extensions;
 using ETGgames.Utils;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using TMPro;
+using System;
+using ETGgames.CheeseGame.Extensions;
 
 public class LevelManager : SingletonMonoBehaviour<LevelManager>
 {
+    [SerializeField] private TextMeshProUGUI _timerText;
+
+    public DateTimeOffset StartTimePlayLevel { get; private set; } = DateTimeOffset.MinValue;
+    public DateTimeOffset EndTimePlayLevel { get; private set; } = DateTimeOffset.MaxValue;
+
+    public TimeSpan TimeTakenToWin => EndTimePlayLevel - StartTimePlayLevel;
+
+    public TimeSpan TimeTakenSoFar => DateTimeOffset.Now - StartTimePlayLevel;
+
+    public bool IsPlayingLevel = false;
+
 
     private void OnEnable()
     {
@@ -22,6 +35,23 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         }
     }
 
+    private void Start()
+    {
+        StartPlayingLevel();
+    }
+
+    public void StartPlayingLevel()
+    {
+        IsPlayingLevel = true;
+        StartTimePlayLevel = DateTimeOffset.Now;
+    }
+
+    public void StopPlayingLevel()
+    {
+        IsPlayingLevel = false;
+        EndTimePlayLevel = DateTimeOffset.Now;
+    }
+
     public void RestartLevel()
     {
         SceneManager.LoadScene(gameObject.scene.name);
@@ -33,5 +63,10 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         {
             RestartLevel();
         }
+    }
+
+    private void Update()
+    {
+        _timerText.text = TimeTakenSoFar.ToHumanReadableString();
     }
 }

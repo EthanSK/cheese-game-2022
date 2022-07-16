@@ -14,7 +14,7 @@ namespace ETGgames.Extensions
     }
 }
 
-namespace ETGgames.YOMG2.Extensions
+namespace ETGgames.CheeseGame.Extensions
 {
     public static class TimeSpanExtensions
     {
