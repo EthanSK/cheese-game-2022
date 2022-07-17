@@ -14,4 +14,9 @@ public static class Constants
         public const string HowToPlay = "HowToPlay";
 
     }
+
+    public static class PlayerPrefs
+    {
+        public const string HasDefaultShownHowToPlay = "HasDefaultShownHowToPlay";
+    }
 }

@@ -25,7 +25,18 @@ public class LevelPreview : MonoBehaviour
 
     public void HandleClick()
     {
-        LevelManager.CheesePrefab = _cheesePrefab;
-        SceneManager.LoadScene(Constants.SceneNames.Level);
+        if (PlayerPrefs.GetInt(Constants.PlayerPrefs.HasDefaultShownHowToPlay, 0) == 0)
+        {
+            LevelManager.CheesePrefab = _cheesePrefab;
+            HowToPlayManager.CheesePrefabForNextScene = _cheesePrefab;
+            SceneManager.LoadScene(Constants.SceneNames.HowToPlay);
+
+        }
+        else
+        {
+            LevelManager.CheesePrefab = _cheesePrefab;
+            SceneManager.LoadScene(Constants.SceneNames.Level);
+        }
+
     }
 }

@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+
+    private void Awake()
+    {
+        LevelManager.CheesePrefab = null;
+    }
+
     public void HandleLevelClick()
     {
         SceneManager.LoadScene(Constants.SceneNames.LevelsMenu);
