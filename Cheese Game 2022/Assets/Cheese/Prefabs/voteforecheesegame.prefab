@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4977720934519546859}
   - component: {fileID: 4648231742131482805}
   m_Layer: 8
-  m_Name: Submarine 1
+  m_Name: voteforecheesegame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -35,12 +35,21 @@ public class Dice : MonoBehaviour
         _curDiceFace = Random.Range(1, 7);
         _audioSource = GetComponent<AudioSource>();
         _audioSourceMaxSound = _audioSource.volume;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
     }
 
     private void Start()
     {
         _lastCollisionPos = transform.position;
+        StartCoroutine(EnableRigidbodyAfterDelay());
+
+    }
+
+    private IEnumerator EnableRigidbodyAfterDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
     private void OnEnable()
