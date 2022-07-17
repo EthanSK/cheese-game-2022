@@ -80,11 +80,14 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         IsPlayingLevel = false;
         EndTimePlayLevel = DateTimeOffset.Now;
         WinScreenManager.TimeTaken = TimeTakenToWin;
-        var curBestTime = PlayerPrefs.GetInt(CurCheese.GetId(), int.MaxValue);
+        var curBestTime = PlayerPrefs.GetInt(CheesePrefab.GetId(), int.MaxValue);
+        //Level Id: Dice-(0.35, -4.69, 0.00);Dice (1)-(5.30, 2.88, 0.00);Dice (2)-(-3.64, 4.07, 0.00);Rat (1)-(3.91, 5.93, 0.12);
+
         if (TimeTakenToWin.TotalMilliseconds < curBestTime)
         {
             Debug.Log("Best time beaten!");
-            PlayerPrefs.SetInt(CurCheese.GetId(), (int)TimeTakenToWin.TotalMilliseconds);
+            Debug.Log("Level Id: " + CheesePrefab.GetId());
+            PlayerPrefs.SetInt(CheesePrefab.GetId(), (int)TimeTakenToWin.TotalMilliseconds);
         }
 
         SceneManager.LoadScene(Constants.SceneNames.WinScreen, LoadSceneMode.Additive);

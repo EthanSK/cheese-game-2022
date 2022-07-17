@@ -15,6 +15,11 @@ public class LevelPreview : MonoBehaviour
         GetComponent<Image>().sprite = _cheesePrefab.GetComponent<SpriteRenderer>().sprite;
     }
 
+    private void Start()
+    {
+        GetComponentInChildren<BestTime>().Init(_cheesePrefab);
+    }
+
     public void HandleClick()
     {
         LevelManager.CheesePrefab = _cheesePrefab;

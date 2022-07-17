@@ -1077,6 +1077,7 @@ MonoBehaviour:
   _worldObj: {fileID: 1827283464}
   IsPlayingLevel: 0
   MobileHorizontalInput: 0
+  CurCheese: {fileID: 0}
 --- !u!4 &845879231
 Transform:
   m_ObjectHideFlags: 0
@@ -1412,6 +1413,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977720934519546858, guid: 25eb5176ede5946bc937dca6c0f70fdd, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977720934519546862, guid: 25eb5176ede5946bc937dca6c0f70fdd, type: 3}
+      propertyPath: _iveGoneToTakeAPissMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

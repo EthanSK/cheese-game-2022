@@ -16,7 +16,7 @@ public class WinScreenManager : MonoBehaviour
     void Start()
     {
         _timeTaken.text = $"Time taken: {TimeTaken.ToHumanReadableString()}";
-        _bestTime.Init(LevelManager.Instance.CurCheese);
+        _bestTime.Init(LevelManager.CheesePrefab);
     }
 
 }
