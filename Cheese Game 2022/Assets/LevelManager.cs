@@ -82,6 +82,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         IsPlayingLevel = false;
         EndTimePlayLevel = DateTimeOffset.Now;
         WinScreenManager.TimeTaken = TimeTakenToWin;
+        _timerText.text = TimeTakenToWin.ToHumanReadableString();
+
         var curBestTime = PlayerPrefs.GetInt(CheesePrefab.GetId(), int.MaxValue);
         //Level Id: Dice-(0.35, -4.69, 0.00);Dice (1)-(5.30, 2.88, 0.00);Dice (2)-(-3.64, 4.07, 0.00);Rat (1)-(3.91, 5.93, 0.12);
 

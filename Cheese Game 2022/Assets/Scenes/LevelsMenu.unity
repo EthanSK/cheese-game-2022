@@ -435,6 +435,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1173237786}
     m_Modifications:
     - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
+      propertyPath: _name
+      value: Mickey Mouse?
+      objectReference: {fileID: 0}
+    - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
       propertyPath: _cheesePrefab
       value: 
       objectReference: {fileID: 4977720934519546862, guid: ca8e4af2df1204af7abc47f30336367c, type: 3}
@@ -746,6 +750,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1173237786}
     m_Modifications:
     - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
+      propertyPath: _name
+      value: Swiss cheese
+      objectReference: {fileID: 0}
+    - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
       propertyPath: _cheesePrefab
       value: 
       objectReference: {fileID: 4977720934519546862, guid: e40ce6faf0c3a4c1ab299ac0ae15777e, type: 3}
@@ -882,8 +890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000091552734}
-  m_SizeDelta: {x: 0, y: 189.2761}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 189.28}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1173237787
 MonoBehaviour:
@@ -1362,6 +1370,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1173237786}
     m_Modifications:
+    - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
+      propertyPath: _name
+      value: Holey Moley
+      objectReference: {fileID: 0}
     - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
       propertyPath: _cheesePrefab
       value: 

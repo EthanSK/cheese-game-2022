@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelPreview : MonoBehaviour
 {
 
-    [SerializeField]
-    Cheese _cheesePrefab;
+    [SerializeField] private Cheese _cheesePrefab;
+    [SerializeField] private string _name;
+    [SerializeField] private TextMeshProUGUI _nameText;
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class LevelPreview : MonoBehaviour
     private void Start()
     {
         GetComponentInChildren<BestTime>().Init(_cheesePrefab);
+        _nameText.text = _name;
     }
 
     public void HandleClick()
