@@ -11,14 +11,22 @@ public class DiceTracker : MonoBehaviour
     {
         var diceTracker = Instantiate(prefab, parent);
         diceTracker._dice = dice;
+        diceTracker.SetPose();
         return diceTracker;
     }
 
     void Update()
     {
+        SetPose();
+    }
+
+    private void SetPose()
+    {
         transform.position = _dice.transform.position;
         transform.rotation = _dice.transform.rotation;
     }
+
+
 
 
 
