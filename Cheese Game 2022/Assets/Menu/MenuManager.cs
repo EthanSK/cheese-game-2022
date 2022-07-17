@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     private void Awake()
     {
         LevelManager.CheesePrefab = null;
+        HowToPlayManager.CheesePrefabForNextScene = null;
     }
 
     public void HandleLevelClick()
