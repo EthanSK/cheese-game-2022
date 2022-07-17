@@ -1027,7 +1027,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
       propertyPath: _name
-      value: pretty please
+      value: submarine
       objectReference: {fileID: 0}
     - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
       propertyPath: _cheesePrefab
@@ -1803,8 +1803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 31.518677, y: 0}
-  m_SizeDelta: {x: -363.8113, y: 6.5024}
+  m_AnchoredPosition: {x: -16.2, y: -0.0000011921}
+  m_SizeDelta: {x: -281.0358, y: 13.154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564451323
 MonoBehaviour:
@@ -1958,7 +1958,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
       propertyPath: _name
-      value: Swiss cheese
+      value: pretty please
       objectReference: {fileID: 0}
     - target: {fileID: 735404111315608628, guid: a6e40f03789f14ecc92fc7bdfc9c6014, type: 3}
       propertyPath: _cheesePrefab
