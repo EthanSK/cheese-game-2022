@@ -469,29 +469,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits
-
-
-    Jesse Gamer
-
-    GMD HelpMeChoose
-
-    techfann
-
-    hacky_smacky
-
-    nochs_brother_2
-
-    Enchanted
-
-    notfightme40
-
-    JamSharp
-
-    Davic
-    Mocanu
-
-    Salzian'
+  m_text: "Credits\n\nSalzian\nJamSharp\nGMD HelpMeChoose\ntechfann\nhacky_smacky\nnochs_brother_2\nEnchanted\nnotfightme40\nJesse
+    Gamer \nDavic Mocanu\nNes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -518,7 +497,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.1
+  m_fontSize: 25.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
