@@ -40,12 +40,12 @@ public class Dice : MonoBehaviour
 
     private void Start()
     {
+        DiceManager.Instance.AddDice(this);
         _lastCollisionPos = transform.position;
     }
 
     private void OnEnable()
     {
-        DiceManager.Instance.AddDice(this);
         _diceTracker = DiceTracker.Create(_diceTrackerPrefab, this, transform.parent.parent);
 
 

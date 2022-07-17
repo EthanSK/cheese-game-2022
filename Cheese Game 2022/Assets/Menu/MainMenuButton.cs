@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButton : MonoBehaviour
 {
-    public void HandleClick()
+    public void HandlePress()
     {
-        SceneManager.UnloadScene(gameObject.scene);
-        SceneManager.LoadScene(Constants.SceneNames.Menu);
+        if (gameObject.scene.name == Constants.SceneNames.WinScreen)
+        {
+            SceneManager.UnloadSceneAsync(gameObject.scene);
+
+        }
+        SceneManager.LoadSceneAsync(Constants.SceneNames.Menu);
     }
 }

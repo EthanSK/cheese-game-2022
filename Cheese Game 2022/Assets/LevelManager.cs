@@ -7,6 +7,7 @@ using System.Linq;
 using TMPro;
 using System;
 using ETGgames.CheeseGame.Extensions;
+using ETGgames.Extensions;
 
 public class LevelManager : SingletonMonoBehaviour<LevelManager>
 {
@@ -104,8 +105,11 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
     private void HandleDiceChange(Dice dice)
     {
-        if (DiceManager.Instance.AliveDices.Count() == 0)
+        if (DiceManager.Instance.AliveDices.Count() == 0 && gameObject.IsInTopmostLoadedScene())
         {
+            Debug.Log("Player has lost!!");
+            DiceManager.Instance.OnDiceChange -= HandleDiceChange;
+
             //lose level
             AudioManager.Instance.AudioSource.PlayOneShot(_loseSound, 1f);
             RestartLevel();
