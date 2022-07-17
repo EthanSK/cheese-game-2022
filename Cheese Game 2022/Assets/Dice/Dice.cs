@@ -58,7 +58,9 @@ public class Dice : MonoBehaviour
                 var newDice = Instantiate(this, diceOnEnemy.NewDiceSpawnPos.position, diceOnEnemy.NewDiceSpawnPos.rotation, transform.parent);
                 newDice._curDiceFace = _curDiceFace;
                 IncrementDiceFace();
+                diceOnEnemy.IsPickedUp = true;
                 Destroy(diceOnEnemy.gameObject);
+                LevelManager.Instance.StopPlayingLevelIfNeeded();
             }
             else
             {

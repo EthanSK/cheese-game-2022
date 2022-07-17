@@ -33,4 +33,32 @@ public class Cheese : MonoBehaviour
 
         }
     }
+
+    public bool AreThereStillAnyEnemiesWithDice()
+    {
+        foreach (Transform child in transform)
+        {
+            var enemy = child.GetComponent<Enemy>();
+            if (!enemy) continue;
+            var diceOnEnemy = enemy.GetComponentInChildren<DiceOnEnemy>();
+            if (diceOnEnemy != null && !diceOnEnemy.IsPickedUp)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public string GetId()
+    {
+        string id = "";
+
+        foreach (Transform child in transform)
+        {
+            id += $"{child.name}-{child.position};";
+        }
+
+        return id;
+    }
 }

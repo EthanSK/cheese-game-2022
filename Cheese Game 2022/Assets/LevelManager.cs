@@ -26,6 +26,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
     public float MobileHorizontalInput = 0f;
 
+    public Cheese CurCheese;
+
 
     private void OnEnable()
     {
@@ -33,11 +35,13 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
         if (CheesePrefab == null)
         {
-            _worldObj.GetComponentInChildren<Cheese>().gameObject.SetActive(true);
+            var cheese = _worldObj.GetComponentInChildren<Cheese>();
+            cheese.gameObject.SetActive(true);
+            CurCheese = cheese;
         }
         else
         {
-            Instantiate(CheesePrefab, _worldObj);
+            CurCheese = Instantiate(CheesePrefab, _worldObj);
 
         }
     }
@@ -63,10 +67,27 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
         StartTimePlayLevel = DateTimeOffset.Now;
     }
 
+    public void StopPlayingLevelIfNeeded()
+    {
+        if (!CurCheese.AreThereStillAnyEnemiesWithDice())
+        {
+            StopPlayingLevel();
+        }
+    }
+
     public void StopPlayingLevel()
     {
         IsPlayingLevel = false;
         EndTimePlayLevel = DateTimeOffset.Now;
+        WinScreenManager.TimeTaken = TimeTakenToWin;
+        var curBestTime = PlayerPrefs.GetInt(CurCheese.GetId(), int.MaxValue);
+        if (TimeTakenToWin.TotalMilliseconds < curBestTime)
+        {
+            Debug.Log("Best time beaten!");
+            PlayerPrefs.SetInt(CurCheese.GetId(), (int)TimeTakenToWin.TotalMilliseconds);
+        }
+
+        SceneManager.LoadScene(Constants.SceneNames.WinScreen, LoadSceneMode.Additive);
     }
 
     public void RestartLevel()
