@@ -7,7 +7,7 @@ public class MainMenuButton : MonoBehaviour
 {
     public void HandleClick()
     {
-        SceneManager.UnloadSceneAsync(gameObject.scene);
+        SceneManager.UnloadScene(gameObject.scene);
         SceneManager.LoadScene(Constants.SceneNames.Menu);
     }
 }
