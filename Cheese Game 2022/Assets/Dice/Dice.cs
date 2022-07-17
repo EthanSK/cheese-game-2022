@@ -9,6 +9,7 @@ public class Dice : MonoBehaviour
     [SerializeField] private float _timeBetweenUpdatingDiceFace;
     [SerializeField] private DiceTracker _diceTrackerPrefab;
     [SerializeField] List<AudioClip> _bounceSounds;
+    [SerializeField] AudioClip _deathSound;
     [SerializeField] private float _distanceAtMaxSound;
     private AudioSource _audioSource;
 
@@ -64,7 +65,6 @@ public class Dice : MonoBehaviour
         if (other.gameObject.GetComponent<Cheese>())
         {
             var vol = (distance / _distanceAtMaxSound) * _audioSourceMaxSound;
-            Debug.Log("volume: " + vol);
             _audioSource.PlayOneShot(_bounceSounds[_bounceSoundIdx], vol);
             _bounceSoundIdx = (_bounceSoundIdx + 1) % _bounceSounds.Count;
         }
@@ -90,7 +90,9 @@ public class Dice : MonoBehaviour
             }
             else
             {
+                AudioManager.Instance.AudioSource.PlayOneShot(_deathSound, 1f);
                 Destroy(gameObject);
+
             }
         }
     }

@@ -1075,6 +1075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timerText: {fileID: 755338016}
   _worldObj: {fileID: 1827283464}
+  _loseSound: {fileID: 8300000, guid: 21167fb43612e4d7eac8883e0d7ed030, type: 3}
   IsPlayingLevel: 0
   MobileHorizontalInput: 0
   CurCheese: {fileID: 0}

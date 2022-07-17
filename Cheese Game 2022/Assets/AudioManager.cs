@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : SingletonMonoBehaviour<AudioManager>
 {
+    public AudioSource AudioSource => _audioSource;
     [SerializeField] private AudioClip _menuMusic;
     [SerializeField] private AudioClip _inGameMusic;
     public override bool IsScenePersistent => true;

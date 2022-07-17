@@ -14,6 +14,7 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
     [SerializeField] private TextMeshProUGUI _timerText;
     [SerializeField] private Transform _worldObj;
+    [SerializeField] private AudioClip _loseSound;
 
     public DateTimeOffset StartTimePlayLevel { get; private set; } = DateTimeOffset.MinValue;
     public DateTimeOffset EndTimePlayLevel { get; private set; } = DateTimeOffset.MaxValue;
@@ -27,6 +28,7 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     public float MobileHorizontalInput = 0f;
 
     public Cheese CurCheese;
+
 
 
     private void OnEnable()
@@ -102,6 +104,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
     {
         if (DiceManager.Instance.AliveDices.Count() == 0)
         {
+            //lose level
+            AudioManager.Instance.AudioSource.PlayOneShot(_loseSound, 1f);
             RestartLevel();
         }
     }
