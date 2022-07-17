@@ -8,10 +8,18 @@ public class Dice : MonoBehaviour
     [SerializeField] private List<Sprite> _diceFaces;
     [SerializeField] private float _timeBetweenUpdatingDiceFace;
     [SerializeField] private DiceTracker _diceTrackerPrefab;
+    [SerializeField] List<AudioClip> _bounceSounds;
+    [SerializeField] private float _distanceAtMaxSound;
+    private AudioSource _audioSource;
+
+    private Vector2 _lastCollisionPos;
+
+    private int _bounceSoundIdx = 0;
 
     private SpriteRenderer _spriteRenderer;
 
     private int _curDiceFace = 1;
+    private float _audioSourceMaxSound;
 
     public bool IsDead { get; private set; } = false;
 
@@ -23,11 +31,14 @@ public class Dice : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _curDiceFace = Random.Range(1, 7);
+        _audioSource = GetComponent<AudioSource>();
+        _audioSourceMaxSound = _audioSource.volume;
 
     }
 
     private void Start()
     {
+        _lastCollisionPos = transform.position;
     }
 
     private void OnEnable()
@@ -45,6 +56,21 @@ public class Dice : MonoBehaviour
         }
         if (_diceTracker != null)
             Destroy(_diceTracker.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        var distance = Vector2.Distance(transform.position, _lastCollisionPos);
+        if (other.gameObject.GetComponent<Cheese>())
+        {
+            var vol = (distance / _distanceAtMaxSound) * _audioSourceMaxSound;
+            Debug.Log("volume: " + vol);
+            _audioSource.PlayOneShot(_bounceSounds[_bounceSoundIdx], vol);
+            _bounceSoundIdx = (_bounceSoundIdx + 1) % _bounceSounds.Count;
+        }
+
+        _lastCollisionPos = transform.position;
+
     }
 
     public void OnOverlapDiceOnEnemy(DiceOnEnemy diceOnEnemy)
