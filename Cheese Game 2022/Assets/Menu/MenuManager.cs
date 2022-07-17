@@ -14,4 +14,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(Constants.SceneNames.Credits);
     }
+
+    public void HandleHowToPlayClick()
+    {
+        SceneManager.LoadScene(Constants.SceneNames.HowToPlay);
+    }
 }

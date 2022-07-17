@@ -11,6 +11,7 @@ public static class Constants
         public const string Level = "Level";
         public const string WinScreen = "WinScreen";
         public const string Credits = "Credits";
+        public const string HowToPlay = "HowToPlay";
 
     }
 }
