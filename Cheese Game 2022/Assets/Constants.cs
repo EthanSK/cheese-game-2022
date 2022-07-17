@@ -10,6 +10,7 @@ public static class Constants
         public const string LevelsMenu = "LevelsMenu";
         public const string Level = "Level";
         public const string WinScreen = "WinScreen";
+        public const string Credits = "Credits";
 
     }
 }

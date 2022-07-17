@@ -9,4 +9,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(Constants.SceneNames.LevelsMenu);
     }
+
+    public void HandleCreditsClick()
+    {
+        SceneManager.LoadScene(Constants.SceneNames.Credits);
+    }
 }

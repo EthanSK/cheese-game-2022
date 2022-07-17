@@ -9,6 +9,7 @@ public class Dice : MonoBehaviour
     [SerializeField] private float _timeBetweenUpdatingDiceFace;
     [SerializeField] private DiceTracker _diceTrackerPrefab;
     [SerializeField] List<AudioClip> _bounceSounds;
+
     [SerializeField] AudioClip _deathSound;
     [SerializeField] private float _distanceAtMaxSound;
     private AudioSource _audioSource;

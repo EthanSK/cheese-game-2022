@@ -117,7 +117,8 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 
     private void Update()
     {
-        _timerText.text = TimeTakenSoFar.ToHumanReadableString();
+        if (IsPlayingLevel)
+            _timerText.text = TimeTakenSoFar.ToHumanReadableString();
     }
 
     public void HandleLeftSideOfScreenPress()
