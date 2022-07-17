@@ -93,6 +93,7 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
             Debug.Log("Best time beaten!");
             Debug.Log("Level Id: " + CheesePrefab.GetId());
             PlayerPrefs.SetInt(CheesePrefab.GetId(), (int)TimeTakenToWin.TotalMilliseconds);
+            PlayerPrefs.Save();
         }
 
         SceneManager.LoadScene(Constants.SceneNames.WinScreen, LoadSceneMode.Additive);

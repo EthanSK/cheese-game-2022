@@ -12,7 +12,7 @@ public class HowToPlayManager : MonoBehaviour
     private void Start()
     {
         PlayerPrefs.SetInt(Constants.PlayerPrefs.HasDefaultShownHowToPlay, 1);
-
+        PlayerPrefs.Save();
         if (CheesePrefabForNextScene != null)
         {
             _playButton.gameObject.SetActive(true);
